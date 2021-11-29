@@ -124,16 +124,12 @@ buttonRestart.addEventListener('click', function () {
 
     const userInput = document.getElementById('userInput');
     userInput.value = '';
+
+    const result = document.querySelector('.result');
+    result.innerHTML = '';
+
+
 });
-
-
-
-
-
-
-
-
-
 
 // function getWinner(somma, scelta) {
     //     if (somma && scelta == 0) { //somma pari e scelta pari
