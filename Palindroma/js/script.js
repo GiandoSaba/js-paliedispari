@@ -2,15 +2,29 @@
 // Creare una funzione per capire se la parola inserita è palindroma
 // (prima senza funzione e poi con funzione)
 
-const string = prompt('Scrivi una parola');
-let stringReverse = '';
+function isPalindrome(string) {
+    
+    let stringReverse = '';
+    
+    for (let i = string.length - 1; i >= 0; i--) {
+        stringReverse += string[i];
+    }
 
-for (let i = string.length - 1; i >= 0; i--) {
-    stringReverse += string[i];
+    //ripulisco le stringhe
+    string = string.toLowerCase().replace(/\s/g, '');
+    stringReverse = stringReverse.toLowerCase().replace(/\s/g, '');
+
+    if (string === stringReverse) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-if (string === stringReverse) {
-    console.log('palindroma');
+const string = prompt('Scrivi una parola');
+
+if (isPalindrome(string)) {
+    console.log(string + ' è palindroma');
 } else {
-    console.log('non palindroma');
+    console.log(string + ' non è palindroma');
 }
